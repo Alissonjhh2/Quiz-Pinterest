@@ -30,7 +30,28 @@ const translations = {
         'ctaButtonText': 'Quero minha Pinterest Queen agora!',
         
         // Footer
-        'footerText': '© 2024 Pinterest Queen Quiz. Todos os direitos reservados.'
+        'footerText': '© 2024 Pinterest Queen Quiz. Todos os direitos reservados.',
+        'option-yes': 'Sim',
+        'option-no': 'Não',
+        'option-sometimes': 'Às vezes',
+        'option-dontknow': 'Não sei',
+        'option-moreless': 'Mais ou menos',
+        'nextBtn': 'Próxima',
+        'finishBtn': 'Ver Resultado',
+        'resultListTitle': 'O que uma Pinterest Queen pode fazer por você:',
+        'benefitList': [
+            'Configurar sua conta comercial',
+            'Criar pins virais diariamente',
+            'Otimizar SEO e Rich Pins',
+            'Participar de comunidades',
+            'Aumentar seguidores organicamente',
+            'Relatórios de crescimento gratuitos'
+        ],
+        'resultAnalysisTitle': 'Análise da sua conta Pinterest',
+        'resultMsgExcellent': 'Excelente! Sua conta está bem estruturada, mas uma Pinterest Queen pode levar seus resultados para o próximo nível com estratégias avançadas e crescimento exponencial.',
+        'resultMsgGood': 'Bom trabalho! Você tem uma base sólida, mas uma Pinterest Queen pode otimizar completamente sua estratégia e multiplicar seus resultados.',
+        'resultMsgOk': 'Você está no caminho certo, mas está perdendo muitas oportunidades. Uma Pinterest Queen pode transformar completamente sua presença no Pinterest.',
+        'resultMsgBad': 'Sua conta tem um potencial enorme não aproveitado! Uma Pinterest Queen pode configurar tudo do zero e fazer sua conta explodir de crescimento.'
     },
     'en': {
         // Main titles - PERSUASIVE COPY
@@ -56,7 +77,28 @@ const translations = {
         'ctaButtonText': 'I want my Pinterest Queen now!',
         
         // Footer
-        'footerText': '© 2024 Pinterest Queen Quiz. All rights reserved.'
+        'footerText': '© 2024 Pinterest Queen Quiz. All rights reserved.',
+        'option-yes': 'Yes',
+        'option-no': 'No',
+        'option-sometimes': 'Sometimes',
+        'option-dontknow': 'I don\'t know',
+        'option-moreless': 'More or less',
+        'nextBtn': 'Next',
+        'finishBtn': 'See Result',
+        'resultListTitle': 'What can a Pinterest Queen do for you:',
+        'benefitList': [
+            'Set up your business account',
+            'Create viral pins daily',
+            'Optimize SEO and Rich Pins',
+            'Participate in communities',
+            'Grow followers organically',
+            'Free growth reports'
+        ],
+        'resultAnalysisTitle': 'Your Pinterest account analysis',
+        'resultMsgExcellent': 'Excellent! Your account is well structured, but a Pinterest Queen can take your results to the next level with advanced strategies and exponential growth.',
+        'resultMsgGood': 'Good job! You have a solid foundation, but a Pinterest Queen can fully optimize your strategy and multiply your results.',
+        'resultMsgOk': 'You are on the right track, but missing many opportunities. A Pinterest Queen can completely transform your Pinterest presence.',
+        'resultMsgBad': 'Your account has huge untapped potential! A Pinterest Queen can set up everything from scratch and make your account explode with growth.'
     },
     'es': {
         // Títulos principales - COPY PERSUASIVO
@@ -82,7 +124,28 @@ const translations = {
         'ctaButtonText': '¡Quiero mi Pinterest Queen ahora!',
         
         // Footer
-        'footerText': '© 2024 Pinterest Queen Quiz. Todos los derechos reservados.'
+        'footerText': '© 2024 Pinterest Queen Quiz. Todos los derechos reservados.',
+        'option-yes': 'Sí',
+        'option-no': 'No',
+        'option-sometimes': 'A veces',
+        'option-dontknow': 'No sé',
+        'option-moreless': 'Más o menos',
+        'nextBtn': 'Siguiente',
+        'finishBtn': 'Ver Resultado',
+        'resultListTitle': '¿Qué puede hacer una Pinterest Queen por ti?',
+        'benefitList': [
+            'Configurar tu cuenta comercial',
+            'Crear pines virales diariamente',
+            'Optimizar SEO y Rich Pins',
+            'Participar en comunidades',
+            'Aumentar seguidores orgánicamente',
+            'Informes de crecimiento gratuitos'
+        ],
+        'resultAnalysisTitle': 'Análisis de tu cuenta de Pinterest',
+        'resultMsgExcellent': '¡Excelente! Tu cuenta está bien estructurada, pero una Pinterest Queen puede llevar tus resultados al siguiente nivel con estrategias avanzadas y crecimiento exponencial.',
+        'resultMsgGood': '¡Buen trabajo! Tienes una base sólida, pero una Pinterest Queen puede optimizar completamente tu estrategia y multiplicar tus resultados.',
+        'resultMsgOk': 'Vas por buen camino, pero estás perdiendo muchas oportunidades. Una Pinterest Queen puede transformar completamente tu presencia en Pinterest.',
+        'resultMsgBad': '¡Tu cuenta tiene un enorme potencial no aprovechado! Una Pinterest Queen puede configurarlo todo desde cero y hacer que tu cuenta explote en crecimiento.'
     }
 };
 
@@ -124,23 +187,23 @@ const totalQuestions = 5;
 const questions = [
     {
         text: 'q1-text',
-        options: ['Sim', 'Não', 'Não sei']
+        options: ['option-yes', 'option-no', 'option-dontknow']
     },
     {
         text: 'q2-text',
-        options: ['Sim', 'Não', 'Às vezes']
+        options: ['option-yes', 'option-no', 'option-sometimes']
     },
     {
         text: 'q3-text',
-        options: ['Sim', 'Não', 'Não sei']
+        options: ['option-yes', 'option-no', 'option-dontknow']
     },
     {
         text: 'q4-text',
-        options: ['Sim', 'Não', 'Às vezes']
+        options: ['option-yes', 'option-no', 'option-sometimes']
     },
     {
         text: 'q5-text',
-        options: ['Sim', 'Não', 'Mais ou menos']
+        options: ['option-yes', 'option-no', 'option-moreless']
     }
 ];
 
@@ -165,13 +228,13 @@ function loadQuestion() {
             <h2>${translations[currentLang][question.text]}</h2>
             <div class="options">
                 ${question.options.map((option, index) => `
-                    <div class="option" onclick="selectOption(this, ${index})">${option}</div>
+                    <div class="option" onclick="selectOption(this, ${index})">${translations[currentLang][option]}</div>
                 `).join('')}
             </div>
         </div>
         <div class="navigation">
             <div></div>
-            <button class="nav-btn primary" onclick="nextQuestion()" disabled id="nextBtn">${currentQuestion === totalQuestions - 1 ? 'Ver Resultado' : 'Próxima'}</button>
+            <button class="nav-btn primary" onclick="nextQuestion()" disabled id="nextBtn">${currentQuestion === totalQuestions - 1 ? translations[currentLang]['finishBtn'] : translations[currentLang]['nextBtn']}</button>
             <div></div>
         </div>
     `;
@@ -218,26 +281,25 @@ function showResults() {
     
     let resultMessage = '';
     if (totalScore >= maxScore * 0.8) {
-        resultMessage = 'Excelente! Sua conta está bem estruturada, mas uma Pinterest Queen pode levar seus resultados para o próximo nível com estratégias avançadas e crescimento exponencial.';
+        resultMessage = translations[currentLang].resultMsgExcellent;
     } else if (totalScore >= maxScore * 0.6) {
-        resultMessage = 'Bom trabalho! Você tem uma base sólida, mas uma Pinterest Queen pode otimizar completamente sua estratégia e multiplicar seus resultados.';
+        resultMessage = translations[currentLang].resultMsgGood;
     } else if (totalScore >= maxScore * 0.4) {
-        resultMessage = 'Você está no caminho certo, mas está perdendo muitas oportunidades. Uma Pinterest Queen pode transformar completamente sua presença no Pinterest.';
+        resultMessage = translations[currentLang].resultMsgOk;
     } else {
-        resultMessage = 'Sua conta tem um potencial enorme não aproveitado! Uma Pinterest Queen pode configurar tudo do zero e fazer sua conta explodir de crescimento.';
+        resultMessage = translations[currentLang].resultMsgBad;
     }
     
+    const benefitList = translations[currentLang].benefitList
+        .map(item => `<li>✅ ${item}</li>`)
+        .join('');
+    
     document.getElementById('resultsMessage').innerHTML = `
-        <h3>Análise da sua conta Pinterest</h3>
+        <h3>${translations[currentLang].resultAnalysisTitle}</h3>
         <p>${resultMessage}</p>
-        <p><strong>O que uma Pinterest Queen pode fazer por você:</strong></p>
+        <p><strong>${translations[currentLang].resultListTitle}</strong></p>
         <ul style="text-align: left; margin: 20px 0;">
-            <li>✅ Configurar sua conta comercial</li>
-            <li>✅ Criar pins virais diariamente</li>
-            <li>✅ Otimizar SEO e Rich Pins</li>
-            <li>✅ Participar de comunidades</li>
-            <li>✅ Aumentar seguidores organicamente</li>
-            <li>✅ Relatórios de crescimento gratuitos</li>
+            ${benefitList}
         </ul>
     `;
 }
