@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Pinterest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header -->
+        <header class="quiz-header">
+            <h1 id="main-title">Seu Pinterest está funcionando pra você?</h1>
+            <p id="main-subtitle">Leva menos de 1 minuto para descobrir como melhorar seu Pinterest</p>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="quiz-content">
+            <!-- Progress bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <!-- Seção de introdução -->
+            <section class="quiz-section active" id="intro-section">
+                <div class="question">
+                    <h2 id="intro-title">Descubra como otimizar seu Pinterest</h2>
+                    <p id="intro-text">Este quiz rápido vai te ajudar a identificar oportunidades de melhoria no seu marketing no Pinterest.</p>
+                </div>
+                <button class="btn" onclick="startQuiz()" id="start-btn">Começar Quiz</button>
+            </section>
+
+            <!-- Pergunta 1 -->
+            <section class="quiz-section" id="question-1">
+                <div class="question">
+                    <h2 id="q1-text">Você publica pins regularmente no Pinterest?</h2>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 1)">Sim</div>
+                        <div class="option" onclick="selectOption(this, 1)">Não</div>
+                        <div class="option" onclick="selectOption(this, 1)">Às vezes</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="nextQuestion(1)" disabled id="next-1">Próxima</button>
+            </section>
+
+            <!-- Pergunta 2 -->
+            <section class="quiz-section" id="question-2">
+                <div class="question">
+                    <h2 id="q2-text">Já testou anúncios pagos no Pinterest?</h2>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 2)">Sim</div>
+                        <div class="option" onclick="selectOption(this, 2)">Não</div>
+                        <div class="option" onclick="selectOption(this, 2)">Às vezes</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="nextQuestion(2)" disabled id="next-2">Próxima</button>
+            </section>
+
+            <!-- Pergunta 3 -->
+            <section class="quiz-section" id="question-3">
+                <div class="question">
+                    <h2 id="q3-text">Você tem uma estratégia clara para seu Pinterest?</h2>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 3)">Sim</div>
+                        <div class="option" onclick="selectOption(this, 3)">Não</div>
+                        <div class="option" onclick="selectOption(this, 3)">Às vezes</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="nextQuestion(3)" disabled id="next-3">Próxima</button>
+            </section>
+
+            <!-- Pergunta 4 -->
+            <section class="quiz-section" id="question-4">
+                <div class="question">
+                    <h2 id="q4-text">Você analisa as métricas do seu Pinterest?</h2>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 4)">Sim</div>
+                        <div class="option" onclick="selectOption(this, 4)">Não</div>
+                        <div class="option" onclick="selectOption(this, 4)">Às vezes</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="nextQuestion(4)" disabled id="next-4">Próxima</button>
+            </section>
+
+            <!-- Pergunta 5 -->
+            <section class="quiz-section" id="question-5">
+                <div class="question">
+                    <h2 id="q5-text">Você está satisfeito com os resultados do seu Pinterest?</h2>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 5)">Sim</div>
+                        <div class="option" onclick="selectOption(this, 5)">Não</div>
+                        <div class="option" onclick="selectOption(this, 5)">Às vezes</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="showResult()" disabled id="finish-btn">Ver Resultado</button>
+            </section>
+
+            <!-- Resultado -->
+            <section class="quiz-section" id="result-section">
+                <div class="result">
+                    <h2 id="result-title">Resultado do seu Quiz</h2>
+                    <p id="result-text">Você ainda pode explorar muito mais tráfego com Pinterest. Que tal deixar isso nas mãos de um especialista?</p>
+                    <a href="#" class="cta-btn" id="cta-btn">
+                        <!-- Adicione o link do Fiverr aqui -->
+                        Ver especialista no Fiverr
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
