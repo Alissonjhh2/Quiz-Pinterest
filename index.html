@@ -2,111 +2,99 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Pinterest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#e60023">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Quiz Pinterest Queen</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="Favicon/Favicon.png">
 </head>
 <body>
-    <div class="quiz-container">
+    <div class="container">
         <!-- Header -->
-        <header class="quiz-header">
-            <h1 id="main-title">Seu Pinterest está funcionando pra você?</h1>
-            <p id="main-subtitle">Leva menos de 1 minuto para descobrir como melhorar seu Pinterest</p>
+        <header class="header">
+            <div class="logo">
+                <i class="fab fa-pinterest"></i>
+                <span id="logoText">Pinterest Queen Quiz</span>
+            </div>
         </header>
 
-        <!-- Conteúdo principal -->
-        <main class="quiz-content">
-            <!-- Progress bar -->
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
+        <!-- Quiz Container -->
+        <div class="quiz-container" id="quizContainer">
+            <!-- Welcome Screen -->
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="welcome-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h1 class="main-title" id="mainTitle">Você precisa de uma Pinterest Queen?</h1>
+                    <p class="welcome-text" id="welcomeText">
+                        Descubra se você está perdendo oportunidades no Pinterest e como uma Pinterest Queen pode transformar seus resultados
+                    </p>
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span id="benefit1">Aumento de seguidores e tráfego orgânico</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-cogs"></i>
+                            <span id="benefit2">Configuração completa da conta comercial</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-rocket"></i>
+                            <span id="benefit3">Criação diária de pins virais</span>
+                        </div>
+                    </div>
+                    <button class="start-btn" onclick="startQuiz()">
+                        <span id="startButtonText">Descobrir Agora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Seção de introdução -->
-            <section class="quiz-section active" id="intro-section">
-                <div class="question">
-                    <h2 id="intro-title">Descubra como otimizar seu Pinterest</h2>
-                    <p id="intro-text">Este quiz rápido vai te ajudar a identificar oportunidades de melhoria no seu marketing no Pinterest.</p>
+            <!-- Quiz Questions -->
+            <div class="quiz-questions" id="quizQuestions" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
                 </div>
-                <button class="btn" onclick="startQuiz()" id="start-btn">Começar Quiz</button>
-            </section>
+                
+                <div class="question-container" id="questionContainer">
+                    <!-- Questions will be dynamically loaded here -->
+                </div>
+            </div>
 
-            <!-- Pergunta 1 -->
-            <section class="quiz-section" id="question-1">
-                <div class="question">
-                    <h2 id="q1-text">Você publica pins regularmente no Pinterest?</h2>
-                    <div class="options">
-                        <div class="option" onclick="selectOption(this, 1)">Sim</div>
-                        <div class="option" onclick="selectOption(this, 1)">Não</div>
-                        <div class="option" onclick="selectOption(this, 1)">Às vezes</div>
+            <!-- Results Screen -->
+            <div class="results-screen" id="resultsScreen" style="display: none;">
+                <div class="results-content">
+                    <div class="results-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h2 class="results-title" id="resultsTitle">Você Precisa de uma Pinterest Queen!</h2>
+                    <div class="results-message" id="resultsMessage">
+                        <!-- Results will be dynamically loaded here -->
+                    </div>
+                    <div class="cta-section">
+                        <h3 id="ctaTitle">Pronto para ter sua própria Pinterest Queen?</h3>
+                        <p id="ctaText1">Com mais de 320 milhões de usuários ativos e 89% com intenção de compra, o Pinterest é um mercado gigante que você não pode ignorar.</p>
+                        <p id="ctaText2"><strong>Deixe-me ser sua Pinterest Queen e transformar completamente seus resultados!</strong></p>
+                        <div class="cta-button-container">
+                            <a href="https://br.fiverr.com/seo_with_jabed/be-your-manager-i-do-seo-promotion-pins-and-traffic?context_referrer=search_gigs_with_recommendations_row_1&source=sorting_by&ref_ctx_id=19857e945e5b4e6c83a843058e0f9d29&pckg_id=1&pos=11&ad_key=6645689d-8610-4dfc-9031-1cfdfdc6b76a&context_type=auto&funnel=19857e945e5b4e6c83a843058e0f9d29&imp_id=6e507b45-eda5-41c7-bdca-aef35abd48da" class="cta-button" id="ctaButton">
+                                <i class="fas fa-crown"></i>
+                                <span id="ctaButtonText">Quero minha Pinterest Queen agora!</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <button class="btn" onclick="nextQuestion(1)" disabled id="next-1">Próxima</button>
-            </section>
+            </div>
+        </div>
 
-            <!-- Pergunta 2 -->
-            <section class="quiz-section" id="question-2">
-                <div class="question">
-                    <h2 id="q2-text">Já testou anúncios pagos no Pinterest?</h2>
-                    <div class="options">
-                        <div class="option" onclick="selectOption(this, 2)">Sim</div>
-                        <div class="option" onclick="selectOption(this, 2)">Não</div>
-                        <div class="option" onclick="selectOption(this, 2)">Às vezes</div>
-                    </div>
-                </div>
-                <button class="btn" onclick="nextQuestion(2)" disabled id="next-2">Próxima</button>
-            </section>
-
-            <!-- Pergunta 3 -->
-            <section class="quiz-section" id="question-3">
-                <div class="question">
-                    <h2 id="q3-text">Você tem uma estratégia clara para seu Pinterest?</h2>
-                    <div class="options">
-                        <div class="option" onclick="selectOption(this, 3)">Sim</div>
-                        <div class="option" onclick="selectOption(this, 3)">Não</div>
-                        <div class="option" onclick="selectOption(this, 3)">Às vezes</div>
-                    </div>
-                </div>
-                <button class="btn" onclick="nextQuestion(3)" disabled id="next-3">Próxima</button>
-            </section>
-
-            <!-- Pergunta 4 -->
-            <section class="quiz-section" id="question-4">
-                <div class="question">
-                    <h2 id="q4-text">Você analisa as métricas do seu Pinterest?</h2>
-                    <div class="options">
-                        <div class="option" onclick="selectOption(this, 4)">Sim</div>
-                        <div class="option" onclick="selectOption(this, 4)">Não</div>
-                        <div class="option" onclick="selectOption(this, 4)">Às vezes</div>
-                    </div>
-                </div>
-                <button class="btn" onclick="nextQuestion(4)" disabled id="next-4">Próxima</button>
-            </section>
-
-            <!-- Pergunta 5 -->
-            <section class="quiz-section" id="question-5">
-                <div class="question">
-                    <h2 id="q5-text">Você está satisfeito com os resultados do seu Pinterest?</h2>
-                    <div class="options">
-                        <div class="option" onclick="selectOption(this, 5)">Sim</div>
-                        <div class="option" onclick="selectOption(this, 5)">Não</div>
-                        <div class="option" onclick="selectOption(this, 5)">Às vezes</div>
-                    </div>
-                </div>
-                <button class="btn" onclick="showResult()" disabled id="finish-btn">Ver Resultado</button>
-            </section>
-
-            <!-- Resultado -->
-            <section class="quiz-section" id="result-section">
-                <div class="result">
-                    <h2 id="result-title">Resultado do seu Quiz</h2>
-                    <p id="result-text">Você ainda pode explorar muito mais tráfego com Pinterest. Que tal deixar isso nas mãos de um especialista?</p>
-                    <a href="#" class="cta-btn" id="cta-btn">
-                        <!-- Adicione o link do Fiverr aqui -->
-                        Ver especialista no Fiverr
-                    </a>
-                </div>
-            </section>
-        </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <p id="footerText">&copy; 2024 Pinterest Queen Quiz. Todos os direitos reservados.</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
